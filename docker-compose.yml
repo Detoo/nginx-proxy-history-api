@@ -1,3 +1,8 @@
+app:
+  build: ./app
+  volumes:
+    - ./app:/opt/nginx-proxy-history-api
+
 web:
   image: nginx
   volumes: 
@@ -5,10 +10,5 @@ web:
     - ./conf/nginx.conf:/etc/nginx/conf.d/default.conf
   ports:
     - 80:80
-
-app:
-  build: ./app
-  volumes:
-    - ./app:/opt/nginx-proxy-history-api
-  ports:
-    - 8888:8888
+  links:
+    - app
