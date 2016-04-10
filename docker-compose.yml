@@ -7,8 +7,8 @@ web:
     - 80:80
 
 app:
-  build: ./docker-images/app
+  build: ./app
   volumes:
-    - .:/opt/nginx-proxy-history-api
+    - ./app:/opt/nginx-proxy-history-api
   ports:
     - 8888:8888
