@@ -1,0 +1,12 @@
+web:
+  build: ./docker-images/web
+  volumes: ./web/dist:/opt/web
+  ports:
+    - 80:80
+
+app:
+  build: ./docker-images/app
+  volumes:
+    - ./app:/opt/app
+  ports:
+    - 8888:8888
